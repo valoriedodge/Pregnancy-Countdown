@@ -88,6 +88,10 @@ ChangeDueDateIntent my girlfriend's new due date is {NewDueDate}
 ChangeDueDateIntent {NewDueDate} is my girlfriend's new due date
 ChangeDueDateIntent change my girlfriend's due date to {NewDueDate}
 
+GiveCountdownIntent how many {DateFormat} I have left
+GiveCountdownIntent how many {DateFormat} my wife has left
+GiveCountdownIntent how many {DateFormat} my partner has left
+GiveCountdownIntent how many {DateFormat} my girlfriend has left
 GiveCountdownIntent how many {DateFormat} until my baby is due
 GiveCountdownIntent how many {DateFormat} until my baby arrives
 GiveCountdownIntent how many {DateFormat} until my baby comes
@@ -356,6 +360,17 @@ PregnancyTerminatedIntent my partner isn't pregnant
 PregnancyTerminatedIntent my partner is not pregnant anymore
 PregnancyTerminatedIntent my partner isn't pregnant anymore
 
+SizeOfBabyIntent size of the baby
+SizeOfBabyIntent size of my baby
+SizeOfBabyIntent baby size
+SizeOfBabyIntent my baby size
+SizeOfBabyIntent the baby size
+SizeOfBabyIntent get the size of the baby
+SizeOfBabyIntent get the size of my baby
+SizeOfBabyIntent tell me the size of the baby
+SizeOfBabyIntent tell me the size of my baby
+SizeOfBabyIntent give me the size of the baby
+SizeOfBabyIntent give me the size of my baby
 SizeOfBabyIntent how small is my baby
 SizeOfBabyIntent how small is the baby
 SizeOfBabyIntent how small is the fetus

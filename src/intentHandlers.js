@@ -20,24 +20,24 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
         }
         storage.loadInfo(session, function (currentPregnancy) {
             var speechOutput = '',
-                reprompt = '';
-            if (currentPregnancy.data.dueDate[0] === dueDate) {
-                speechOutput += dueDate + ' has already been set.';
+                reprompt = textHelper.nextHelp;
+            if (currentPregnancy.data.dueDate[0]) {
+                speechOutput += 'Your due date was already set to ' + currentPregnancy.data.dueDate[0] + ' .';
                 if (skillContext.needMoreHelp) {
                     response.ask(speechOutput + ' what would you like to do?', 'What would you like to do?');
-                } else {
-                    response.tell(speechOutput);
                 }
+                response.ask(speechOutput + 'Do you want to change the due date?', 'When is the baby due?');
                 return;
             }
-            speechOutput += dueDate + ' has been set as your due date.';
-            currentPregnancy.data.dueDate.push(dueDate);
-            if (skillContext.needMoreHelp) {
-                speechOutput += 'Would you like to know how many days you have left or would you like to know the size of the baby?';
-                reprompt = textHelper.nextHelp;
+            if (!dueDateIsValid(dueDate)){
+                response.ask('I did not get that date. When is the baby due?', 'When is the baby due?');
+                return;
             }
+            speechOutput += 'Congratulations! ' + dueDate + ' has been set as your due date. ';
+            currentPregnancy.data.dueDate[0] = dueDate;
+
             currentPregnancy.save(function () {
-              response.ask(speechOutput + "Anything else?", reprompt);
+              response.ask(speechOutput + "Would you like to know anything else?", reprompt);
             });
         });
     };
@@ -45,7 +45,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
     intentHandlers.ChangeDueDateIntent = function (intent, session, response) {
         //change the due date of the baby.
         var newDueDate = intent.slots.NewDueDate.value;
-        if (!newDueDate) {
+        if (!newDueDate || !dueDateIsValid(newDueDate)) {
             response.ask('What is the new due date for the baby?', 'Please say the due date again');
             return;
         }
@@ -54,7 +54,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
               reprompt = textHelper.nextHelp;
             currentPregnancy.data.dueDate[0] = newDueDate;
 
-            speechOutput += 'The due date for your baby is set to' + newDueDate + '. ';
+            speechOutput += 'The due date for your baby is set to ' + newDueDate + '. ';
             currentPregnancy.save(function () {
               response.ask(speechOutput + "Anything else?", reprompt);
             });
@@ -73,7 +73,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
                 response.tell('You have not set your due date.');
                 return;
             }
-            var currentDueDate = currentPregnancy.data.dueDate[0];
+            var currentDueDate = new Date(currentPregnancy.data.dueDate[0]);
             var todayDate = new Date();
             if (!interval) {
               interval = "days";
@@ -116,7 +116,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
                 response.ask('You have not set your due date. When is the baby due?', 'When is the baby due?');
                 return;
             }
-            var currentDueDate = currentPregnancy.data.dueDate[0];
+            var currentDueDate = new Date(currentPregnancy.data.dueDate[0]);
             var todayDate = new Date();
             var interval = "weeks";
             var weeks = (40 - getCountdownStatus(todayDate, currentDueDate, interval));
@@ -174,8 +174,9 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
 
 function dueDateIsValid(date) {
     var currentDate = new Date();
+    var proposedDate = new Date(date);
     var days = "days";
-    var checkDate = getCountdownStatus(currentDate, date, days);
+    var checkDate = getCountdownStatus(currentDate, proposedDate, days);
     if (!checkDate || isNaN(checkDate) || checkDate < 0 || checkDate > 365) {
       return false;
     }  else {
@@ -192,7 +193,7 @@ var sizes = {
   8: "Your baby is about the size of a lima bean",
   9: "Your baby is about the size of a cherry",
   10: "Your baby is about the size of a walnut",
-  11: "Your baby is about the size of a apricot",
+  11: "Your baby is about the size of an apricot",
   12: "Your baby is about the size of a lime",
   13: "Your baby is about the size of a plum",
   14: "Your baby is about the size of a lemon",
@@ -201,7 +202,7 @@ var sizes = {
   17: "Your baby is about the size of a pear",
   18: "Your baby is about the size of a bell pepper",
   19: "Your baby is about the size of an sweet potato",
-  20: "Your baby is about the size of a artichoke",
+  20: "Your baby is about the size of an artichoke",
   21: "Your baby is about the size of a banana",
   22: "Your baby is about the size of a small spaghetti squash",
   23: "Your baby is about the size of a large mango",
