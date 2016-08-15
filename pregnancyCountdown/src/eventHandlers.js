@@ -23,14 +23,14 @@ var registerEventHandlers = function (eventHandlers, skillContext) {
         storage.loadInfo(session, function (currentPregnancy) {
             var speechOutput = '',
                 reprompt;
-            if (!currentPregnancy.data.dueDate[0]) {
-                speechOutput += 'Pregnancy countdown, congratulations on your pregnancy! When is your baby due?';
+            if (!currentPregnancy.isPregnant) {
+                speechOutput += 'Pregnancy Countdown, Congratulations on your pregnancy! When is your baby due?';
                 reprompt = "Please tell me what your due date is.";
-            } else if (currentPregnancy.data.dueDate[0]) {
+            } else if (currentPregnancy.isPregnant()) {
                 speechOutput += 'You can check when your due date is, ask how big your baby is, or ask how much longer you have in your pregnancy. Which would you like?';
                 reprompt = textHelper.nextHelp;
             } else {
-                speechOutput += 'Pregnancy countdown, what can I do for you?';
+                speechOutput += 'PregnancyCountdown, What can I do for you?';
                 reprompt = textHelper.completeHelp;
             }
             response.ask(speechOutput, reprompt);

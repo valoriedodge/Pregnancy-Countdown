@@ -1,11 +1,9 @@
 /**
-    Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+    Copyright 2016 Valorie Dodge. All Rights Reserved.
 
-    Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
+    Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located
 
-        http://aws.amazon.com/apache2.0/
-
-    or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+    in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 */
 
 'use strict';
@@ -71,7 +69,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
                 continueSession,
                 speechOutput = '',
                 cardOutput = '';
-            if (!currentPregnancy.data.dueDate[0]]) {
+            if (!currentPregnancy.data.dueDate[0]) {
                 response.tell('You have not set your due date.');
                 return;
             }
@@ -94,7 +92,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
             var continueSession,
                 speechOutput = '',
                 cardOutput = '';
-            if (!currentPregnancy.data.dueDate[0]]) {
+            if (!currentPregnancy.data.dueDate[0]) {
                 response.ask('You have not set your due date. When is the baby due?', 'When is the baby due?');
                 return;
             }
@@ -178,7 +176,7 @@ function dueDateIsValid(date) {
     var currentDate = new Date();
     var days = "days";
     var checkDate = getCountdownStatus(currentDate, date, days);
-    if (!checkDate || checkDate === NaN || checkDate < 0 || checkDate > 365) {
+    if (!checkDate || isNaN(checkDate) || checkDate < 0 || checkDate > 365) {
       return false;
     }  else {
       return true;
@@ -227,9 +225,9 @@ var sizes = {
   41: "Your baby is about the size of a watermelon"
 }
 
-function getCountdownStatus(currentDate,dueDate,interval) {
+function getCountdownStatus(date1,date2,interval) {
     var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
-    var timediff = dueDate - currentDate;
+    var timediff = date2 - date1;
     if (isNaN(timediff)) return NaN;
     switch (interval) {
         case "years": return date2.getFullYear() - date1.getFullYear();
