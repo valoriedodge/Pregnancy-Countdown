@@ -1,0 +1,370 @@
+
+AddDueDateIntent add my due date
+AddDueDateIntent we're having a baby
+AddDueDateIntent I'm having a baby
+AddDueDateIntent my wife is having a baby
+AddDueDateIntent my girlfriend is having a baby
+AddDueDateIntent my partner is having a baby
+AddDueDateIntent I'm pregnant
+AddDueDateIntent my wife is pregnant
+AddDueDateIntent my girlfriend is pregnant
+AddDueDateIntent my partner is pregnant
+AddDueDateIntent add my due date {DueDate}
+AddDueDateIntent add due date {DueDate}
+AddDueDateIntent due date is {DueDate}
+AddDueDateIntent I am due {DueDate}
+AddDueDateIntent I'm due {DueDate}
+AddDueDateIntent baby is due {DueDate}
+AddDueDateIntent baby's due {DueDate}
+AddDueDateIntent my baby is due {DueDate}
+AddDueDateIntent my baby's due {DueDate}
+AddDueDateIntent my wife is due {DueDate}
+AddDueDateIntent my wife's due {DueDate}
+AddDueDateIntent add due date {DueDate}
+AddDueDateIntent add my due date {DueDate}
+AddDueDateIntent add my baby's due date {DueDate}
+AddDueDateIntent add baby's due date {DueDate}
+AddDueDateIntent add my wife's due date {DueDate}
+AddDueDateIntent my wife's due date is {DueDate}
+AddDueDateIntent my baby's due date is {DueDate}
+AddDueDateIntent baby's due date is {DueDate}
+AddDueDateIntent my due date is {DueDate}
+AddDueDateIntent add {DueDate} as due date
+AddDueDateIntent add {DueDate} as my due date
+AddDueDateIntent add {DueDate} as my baby's due date
+AddDueDateIntent add {DueDate} as baby's due date
+AddDueDateIntent add {DueDate} as my wife's due date
+AddDueDateIntent {DueDate} is my due date
+AddDueDateIntent {DueDate} is my wife's due date
+AddDueDateIntent {DueDate} is my baby's due date
+AddDueDateIntent {DueDate} is baby's due date
+AddDueDateIntent {DueDate} is when my baby is due
+AddDueDateIntent {DueDate} is when baby is due
+AddDueDateIntent my partner is due {DueDate}
+AddDueDateIntent my partner's due {DueDate}
+AddDueDateIntent add my partner's due date {DueDate}
+AddDueDateIntent my partner's due date is {DueDate}
+AddDueDateIntent add {DueDate} as my partner's due date
+AddDueDateIntent {DueDate} is my partner's due date
+AddDueDateIntent my girlfriend is due {DueDate}
+AddDueDateIntent my girlfriend's due {DueDate}
+AddDueDateIntent add my girlfriend's due date {DueDate}
+AddDueDateIntent my girlfriend's due date is {DueDate}
+AddDueDateIntent add {DueDate} as my girlfriend's due date
+AddDueDateIntent {DueDate} is my girlfriend's due date
+
+BabyDueDateIntent what is my due date
+BabyDueDateIntent what is my wife's due date
+BabyDueDateIntent what is my baby's due date
+BabyDueDateIntent what is the baby's due date
+BabyDueDateIntent what is my partner's due date
+BabyDueDateIntent what is my girlfriend's due date
+
+ChangeDueDateIntent change my due date
+ChangeDueDateIntent my due date changed
+ChangeDueDateIntent {NewDueDate} is now my due date
+ChangeDueDateIntent my due date changed to {NewDueDate}
+ChangeDueDateIntent my new due date is {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is my new due date
+ChangeDueDateIntent change my due date to {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is now my wife's due date
+ChangeDueDateIntent my wife's due date changed to {NewDueDate}
+ChangeDueDateIntent my wife's new due date is {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is my wife's new due date
+ChangeDueDateIntent change my wife's due date to {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is now my baby's due date
+ChangeDueDateIntent my baby's due date changed to {NewDueDate}
+ChangeDueDateIntent my baby's new due date is {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is my baby's new due date
+ChangeDueDateIntent change my baby's due date to {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is now my partner's due date
+ChangeDueDateIntent my partner's due date changed to {NewDueDate}
+ChangeDueDateIntent my partner's new due date is {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is my partner's new due date
+ChangeDueDateIntent change my partner's due date to {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is now my girlfriend's due date
+ChangeDueDateIntent my girlfriend's due date changed to {NewDueDate}
+ChangeDueDateIntent my girlfriend's new due date is {NewDueDate}
+ChangeDueDateIntent {NewDueDate} is my girlfriend's new due date
+ChangeDueDateIntent change my girlfriend's due date to {NewDueDate}
+
+GiveCountdownIntent how many {DateFormat} until my baby is due
+GiveCountdownIntent how many {DateFormat} until my baby arrives
+GiveCountdownIntent how many {DateFormat} until my baby comes
+GiveCountdownIntent how many {DateFormat} until my baby is born
+GiveCountdownIntent how many {DateFormat} until my baby is here
+GiveCountdownIntent how many {DateFormat} until the baby is due
+GiveCountdownIntent how many {DateFormat} until the baby arrives
+GiveCountdownIntent how many {DateFormat} until the baby comes
+GiveCountdownIntent how many {DateFormat} until the baby is born
+GiveCountdownIntent how many {DateFormat} until the baby is here
+GiveCountdownIntent how many {DateFormat} until I'm done
+GiveCountdownIntent how many {DateFormat} until I am done
+GiveCountdownIntent how many {DateFormat} until my pregnancy is over
+GiveCountdownIntent how many {DateFormat} until my due date
+GiveCountdownIntent how many {DateFormat} until my wife is done
+GiveCountdownIntent how many {DateFormat} until my wife's done
+GiveCountdownIntent how many {DateFormat} until my wife's pregnancy is over
+GiveCountdownIntent how many {DateFormat} until my wife's due date
+GiveCountdownIntent how many {DateFormat} until my wife's due
+GiveCountdownIntent how many {DateFormat} until my partner is done
+GiveCountdownIntent how many {DateFormat} until my partner's done
+GiveCountdownIntent how many {DateFormat} until my partner's pregnancy is over
+GiveCountdownIntent how many {DateFormat} until my partner's due date
+GiveCountdownIntent how many {DateFormat} until my partner's due
+GiveCountdownIntent how many {DateFormat} until my girlfriend is done
+GiveCountdownIntent how many {DateFormat} until my girlfriend's done
+GiveCountdownIntent how many {DateFormat} until my girlfriend's pregnancy is over
+GiveCountdownIntent how many {DateFormat} until my girlfriend's due date
+GiveCountdownIntent how many {DateFormat} until my girlfriend's due
+GiveCountdownIntent how many {DateFormat} left
+GiveCountdownIntent how many {DateFormat} left until my baby is due
+GiveCountdownIntent how many {DateFormat} left until my baby arrives
+GiveCountdownIntent how many {DateFormat} left until my baby comes
+GiveCountdownIntent how many {DateFormat} left until my baby is born
+GiveCountdownIntent how many {DateFormat} left until my baby is here
+GiveCountdownIntent how many {DateFormat} left until the baby is due
+GiveCountdownIntent how many {DateFormat} left until the baby arrives
+GiveCountdownIntent how many {DateFormat} left until the baby comes
+GiveCountdownIntent how many {DateFormat} left until the baby is born
+GiveCountdownIntent how many {DateFormat} left until the baby is here
+GiveCountdownIntent how many {DateFormat} left until I'm done
+GiveCountdownIntent how many {DateFormat} left until I am done
+GiveCountdownIntent how many {DateFormat} left until my pregnancy is over
+GiveCountdownIntent how many {DateFormat} left until my due date
+GiveCountdownIntent how many {DateFormat} left until my partner is done
+GiveCountdownIntent how many {DateFormat} left until my partner's done
+GiveCountdownIntent how many {DateFormat} left until my partner's pregnancy is over
+GiveCountdownIntent how many {DateFormat} left until my partner's due date
+GiveCountdownIntent how many {DateFormat} left until my partner's due
+GiveCountdownIntent how many {DateFormat} left until my girlfriend is done
+GiveCountdownIntent how many {DateFormat} left until my girlfriend's done
+GiveCountdownIntent how many {DateFormat} left until my girlfriend's pregnancy is over
+GiveCountdownIntent how many {DateFormat} left until my girlfriend's due date
+GiveCountdownIntent how many {DateFormat} left until my girlfriend's due
+GiveCountdownIntent tell me how many {DateFormat} until my baby is due
+GiveCountdownIntent tell me how many {DateFormat} until my baby arrives
+GiveCountdownIntent tell me how many {DateFormat} until my baby comes
+GiveCountdownIntent tell me how many {DateFormat} until my baby is born
+GiveCountdownIntent tell me how many {DateFormat} until my baby is here
+GiveCountdownIntent tell me how many {DateFormat} until the baby is due
+GiveCountdownIntent tell me how many {DateFormat} until the baby arrives
+GiveCountdownIntent tell me how many {DateFormat} until the baby comes
+GiveCountdownIntent tell me how many {DateFormat} until the baby is born
+GiveCountdownIntent tell me how many {DateFormat} until the baby is here
+GiveCountdownIntent tell me how many {DateFormat} until I'm done
+GiveCountdownIntent tell me how many {DateFormat} until I am done
+GiveCountdownIntent tell me how many {DateFormat} until my pregnancy is over
+GiveCountdownIntent tell me how many {DateFormat} until my due date
+GiveCountdownIntent tell me how many {DateFormat} until my partner is done
+GiveCountdownIntent tell me how many {DateFormat} until my partner's done
+GiveCountdownIntent tell me how many {DateFormat} until my partner's pregnancy is over
+GiveCountdownIntent tell me how many {DateFormat} until my partner's due date
+GiveCountdownIntent tell me how many {DateFormat} until my partner's due
+GiveCountdownIntent tell me how many {DateFormat} until my girlfriend is done
+GiveCountdownIntent tell me how many {DateFormat} until my girlfriend's done
+GiveCountdownIntent tell me how many {DateFormat} until my girlfriend's pregnancy is over
+GiveCountdownIntent tell me how many {DateFormat} until my girlfriend's due date
+GiveCountdownIntent tell me how many {DateFormat} until my girlfriend's due
+GiveCountdownIntent tell me how many {DateFormat} left
+GiveCountdownIntent tell me how many {DateFormat} left until my baby is due
+GiveCountdownIntent tell me how many {DateFormat} left until my baby arrives
+GiveCountdownIntent tell me how many {DateFormat} left until my baby comes
+GiveCountdownIntent tell me how many {DateFormat} left until my baby is born
+GiveCountdownIntent tell me how many {DateFormat} left until my baby is here
+GiveCountdownIntent tell me how many {DateFormat} left until the baby is due
+GiveCountdownIntent tell me how many {DateFormat} left until the baby arrives
+GiveCountdownIntent tell me how many {DateFormat} left until the baby comes
+GiveCountdownIntent tell me how many {DateFormat} left until the baby is born
+GiveCountdownIntent tell me how many {DateFormat} left until the baby is here
+GiveCountdownIntent tell me how many {DateFormat} left until I'm done
+GiveCountdownIntent tell me how many {DateFormat} left until I am done
+GiveCountdownIntent tell me how many {DateFormat} left until my pregnancy is over
+GiveCountdownIntent tell me how many {DateFormat} left until my due date
+GiveCountdownIntent tell me how many {DateFormat} left until my partner is done
+GiveCountdownIntent tell me how many {DateFormat} left until my partner's done
+GiveCountdownIntent tell me how many {DateFormat} left until my partner's pregnancy is over
+GiveCountdownIntent tell me how many {DateFormat} left until my partner's due date
+GiveCountdownIntent tell me how many {DateFormat} left until my partner's due
+GiveCountdownIntent tell me how many {DateFormat} left until my girlfriend is done
+GiveCountdownIntent tell me how many {DateFormat} left until my girlfriend's done
+GiveCountdownIntent tell me how many {DateFormat} left until my girlfriend's pregnancy is over
+GiveCountdownIntent tell me how many {DateFormat} left until my girlfriend's due date
+GiveCountdownIntent tell me how many {DateFormat} left until my girlfriend's due
+GiveCountdownIntent give me how many {DateFormat} until my baby is due
+GiveCountdownIntent give me how many {DateFormat} until my baby arrives
+GiveCountdownIntent give me how many {DateFormat} until my baby comes
+GiveCountdownIntent give me how many {DateFormat} until my baby is born
+GiveCountdownIntent give me how many {DateFormat} until my baby is here
+GiveCountdownIntent give me how many {DateFormat} until the baby is due
+GiveCountdownIntent give me how many {DateFormat} until the baby arrives
+GiveCountdownIntent give me how many {DateFormat} until the baby comes
+GiveCountdownIntent give me how many {DateFormat} until the baby is born
+GiveCountdownIntent give me how many {DateFormat} until the baby is here
+GiveCountdownIntent give me how many {DateFormat} until I'm done
+GiveCountdownIntent give me how many {DateFormat} until I am done
+GiveCountdownIntent give me how many {DateFormat} until my pregnancy is over
+GiveCountdownIntent give me how many {DateFormat} until my due date
+GiveCountdownIntent give me how many {DateFormat} until my partner is done
+GiveCountdownIntent give me how many {DateFormat} until my partner's done
+GiveCountdownIntent give me how many {DateFormat} until my partner's pregnancy is over
+GiveCountdownIntent give me how many {DateFormat} until my partner's due date
+GiveCountdownIntent give me how many {DateFormat} until my partner's due
+GiveCountdownIntent give me how many {DateFormat} until my girlfriend is done
+GiveCountdownIntent give me how many {DateFormat} until my girlfriend's done
+GiveCountdownIntent give me how many {DateFormat} until my girlfriend's pregnancy is over
+GiveCountdownIntent give me how many {DateFormat} until my girlfriend's due date
+GiveCountdownIntent give me how many {DateFormat} until my girlfriend's due
+GiveCountdownIntent give me how many {DateFormat} left
+GiveCountdownIntent give me how many {DateFormat} left until my baby is due
+GiveCountdownIntent give me how many {DateFormat} left until my baby arrives
+GiveCountdownIntent give me how many {DateFormat} left until my baby comes
+GiveCountdownIntent give me how many {DateFormat} left until my baby is born
+GiveCountdownIntent give me how many {DateFormat} left until my baby is here
+GiveCountdownIntent give me how many {DateFormat} left until my baby is due
+GiveCountdownIntent give me how many {DateFormat} left until the baby arrives
+GiveCountdownIntent give me how many {DateFormat} left until the baby comes
+GiveCountdownIntent give me how many {DateFormat} left until the baby is born
+GiveCountdownIntent give me how many {DateFormat} left until the baby is here
+GiveCountdownIntent give me how many {DateFormat} left until I'm done
+GiveCountdownIntent give me how many {DateFormat} left until I am done
+GiveCountdownIntent give me how many {DateFormat} left until my pregnancy is over
+GiveCountdownIntent give me how many {DateFormat} left until my due date
+GiveCountdownIntent give me how many {DateFormat} left until my partner is done
+GiveCountdownIntent give me how many {DateFormat} left until my partner's done
+GiveCountdownIntent give me how many {DateFormat} left until my partner's pregnancy is over
+GiveCountdownIntent give me how many {DateFormat} left until my partner's due date
+GiveCountdownIntent give me how many {DateFormat} left until my partner's due
+GiveCountdownIntent give me how many {DateFormat} left until my girlfriend is done
+GiveCountdownIntent give me how many {DateFormat} left until my girlfriend's done
+GiveCountdownIntent give me how many {DateFormat} left until my girlfriend's pregnancy is over
+GiveCountdownIntent give me how many {DateFormat} left until my girlfriend's due date
+GiveCountdownIntent give me how many {DateFormat} left until my girlfriend's due
+GiveCountdownIntent how much left
+GiveCountdownIntent how much longer
+GiveCountdownIntent how much left until the baby is here
+GiveCountdownIntent how much longer until the baby is here
+GiveCountdownIntent how much left until my baby is here
+GiveCountdownIntent how much longer until my baby is here
+GiveCountdownIntent how much left until the baby comes
+GiveCountdownIntent how much longer until the baby comes
+GiveCountdownIntent how much left until my baby comes
+GiveCountdownIntent how much longer until my baby comes
+GiveCountdownIntent how much left until the baby is born
+GiveCountdownIntent how much longer until the baby is born
+GiveCountdownIntent how much left until my baby is born
+GiveCountdownIntent how much longer until my baby is born
+GiveCountdownIntent tell me how much left
+GiveCountdownIntent tell me how much longer
+GiveCountdownIntent tell me how much left until the baby is here
+GiveCountdownIntent tell me how much longer until the baby is here
+GiveCountdownIntent tell me how much left until my baby is here
+GiveCountdownIntent tell me how much longer until my baby is here
+GiveCountdownIntent tell me how much left until the baby comes
+GiveCountdownIntent tell me how much longer until the baby comes
+GiveCountdownIntent tell me how much left until my baby comes
+GiveCountdownIntent tell me how much longer until my baby comes
+GiveCountdownIntent tell me how much left until the baby is born
+GiveCountdownIntent tell me how much longer until the baby is born
+GiveCountdownIntent tell me how much left until my baby is born
+GiveCountdownIntent tell me how much longer until my baby is born
+GiveCountdownIntent give me how much left
+GiveCountdownIntent give me how much longer
+GiveCountdownIntent give me how much left until the baby is here
+GiveCountdownIntent give me how much longer until the baby is here
+GiveCountdownIntent give me how much left until my baby is here
+GiveCountdownIntent give me how much longer until my baby is here
+GiveCountdownIntent give me how much left until the baby comes
+GiveCountdownIntent give me how much longer until the baby comes
+GiveCountdownIntent give me how much left until my baby comes
+GiveCountdownIntent give me how much longer until my baby comes
+GiveCountdownIntent give me how much left until the baby is born
+GiveCountdownIntent give me how much longer until the baby is born
+GiveCountdownIntent give me how much left until my baby is born
+GiveCountdownIntent give me how much longer until my baby is born
+GiveCountdownIntent when am I having my baby
+GiveCountdownIntent when am I going to have my baby
+GiveCountdownIntent when am I having the baby
+GiveCountdownIntent when am I going to have the baby
+GiveCountdownIntent when is my wife having my baby
+GiveCountdownIntent when is my wife going to have my baby
+GiveCountdownIntent when is my wife going to have the baby
+GiveCountdownIntent when is my wife having the baby
+GiveCountdownIntent when is my baby going to be here
+GiveCountdownIntent when is my baby going to arrive
+GiveCountdownIntent when is my baby going to be born
+GiveCountdownIntent when is my baby going to come
+GiveCountdownIntent when is my baby due
+GiveCountdownIntent when is the baby going to be here
+GiveCountdownIntent when is the baby going to arrive
+GiveCountdownIntent when is the baby going to be born
+GiveCountdownIntent when is the baby going to come
+GiveCountdownIntent when is the baby due
+GiveCountdownIntent when is my due date
+GiveCountdownIntent when is my wife due
+GiveCountdownIntent when am I due
+GiveCountdownIntent when is my wife's due date
+GiveCountdownIntent when will my baby arrive
+GiveCountdownIntent when will my baby come
+GiveCountdownIntent when will my baby be born
+GiveCountdownIntent when will my baby be here
+GiveCountdownIntent when will the baby arrive
+GiveCountdownIntent when will the baby come
+GiveCountdownIntent when will the baby be born
+GiveCountdownIntent when will the baby be here
+GiveCountdownIntent when is my partner having my baby
+GiveCountdownIntent when is my partner going to have my baby
+GiveCountdownIntent when is my partner going to have the baby
+GiveCountdownIntent when is my partner having the baby
+GiveCountdownIntent when is my partner due
+GiveCountdownIntent when is my partner's due date
+GiveCountdownIntent when is my girlfriend having my baby
+GiveCountdownIntent when is my girlfriend going to have my baby
+GiveCountdownIntent when is my girlfriend going to have the baby
+GiveCountdownIntent when is my girlfriend having the baby
+GiveCountdownIntent when is my girlfriend due
+GiveCountdownIntent when is my girlfriend's due date
+
+
+BabyDeliveredIntent my baby was born
+BabyDeliveredIntent the baby was born
+BabyDeliveredIntent my baby is here
+BabyDeliveredIntent the baby is here
+BabyDeliveredIntent I had my baby
+BabyDeliveredIntent I delivered my baby
+BabyDeliveredIntent my wife had the baby
+BabyDeliveredIntent my wife delivered the baby
+BabyDeliveredIntent my girlfriend had the baby
+BabyDeliveredIntent my girlfriend delivered the baby
+BabyDeliveredIntent my partner had the baby
+BabyDeliveredIntent my partner delivered the baby
+
+PregnancyTerminatedIntent we lost the baby
+PregnancyTerminatedIntent the pregnancy is over
+PregnancyTerminatedIntent I'm not pregnant anymore
+PregnancyTerminatedIntent I am not pregnant anymore
+PregnancyTerminatedIntent my wife is not pregnant
+PregnancyTerminatedIntent my wife isn't pregnant
+PregnancyTerminatedIntent my wife is not pregnant anymore
+PregnancyTerminatedIntent my wife isn't pregnant anymore
+PregnancyTerminatedIntent my girlfriend is not pregnant
+PregnancyTerminatedIntent my girlfriend isn't pregnant
+PregnancyTerminatedIntent my girlfriend is not pregnant anymore
+PregnancyTerminatedIntent my girlfriend isn't pregnant anymore
+PregnancyTerminatedIntent my partner is not pregnant
+PregnancyTerminatedIntent my partner isn't pregnant
+PregnancyTerminatedIntent my partner is not pregnant anymore
+PregnancyTerminatedIntent my partner isn't pregnant anymore
+
+SizeOfBabyIntent how small is my baby
+SizeOfBabyIntent how small is the baby
+SizeOfBabyIntent how small is the fetus
+SizeOfBabyIntent how large is my baby
+SizeOfBabyIntent how large is the baby
+SizeOfBabyIntent how large is the fetus
+SizeOfBabyIntent how big is my baby
+SizeOfBabyIntent how big is the baby
+SizeOfBabyIntent how big is the fetus
+SizeOfBabyIntent what size is my baby
+SizeOfBabyIntent what size is the baby
+SizeOfBabyIntent what size is the fetus

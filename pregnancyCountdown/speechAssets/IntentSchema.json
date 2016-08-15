@@ -1,0 +1,52 @@
+{
+  "intents": [
+    {
+      "intent": "AddDueDateIntent",
+      "slots": [
+        {
+          "name": "DueDate",
+          "type": "AMAZON.DATE"
+        }
+      ]
+    },
+    {
+      "intent": "ChangeDueDateIntent",
+      "slots": [
+        {
+          "name": "NewDueDate",
+          "type": "AMAZON.DATE"
+        }
+      ]
+    },
+    {
+      "intent": "GiveCountdownIntent",
+      "slots": [
+        {
+          "name": "DateFormat",
+          "type": "LIST_OF_TIME_TERMS"
+        }
+      ]
+    },
+    {
+      "intent": "BabyDeliveredIntent"
+    },
+    {
+      "intent": "PregnancyTerminatedIntent"
+    },
+    {
+      "intent": "BabyDueDateIntent"
+    },
+    {
+      "intent": "SizeOfBabyIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
