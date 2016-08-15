@@ -16,13 +16,13 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
     intentHandlers.AddDueDateIntent = function (intent, session, response) {
         //add due date for user
         var dueDate = intent.slots.DueDate.value;
-        if (!dueDateIsValid(dueDate)) {
-            response.ask('Congratulations on the pregnancy! When is the baby due?');
+        if (!dueDate) {
+            response.ask('Congratulations on the pregnancy! When is the baby due?', 'When is the baby due?');
             return;
         }
         storage.loadInfo(session, function (currentPregnancy) {
-            var speechOutput,
-                reprompt;
+            var speechOutput = '',
+                reprompt = '';
             if (currentPregnancy.data.dueDate[0] === dueDate) {
                 speechOutput += dueDate + ' has already been set.';
                 if (skillContext.needMoreHelp) {
@@ -39,11 +39,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
                 reprompt = textHelper.nextHelp;
             }
             currentPregnancy.save(function () {
-                if (reprompt) {
-                    response.ask(speechOutput, reprompt);
-                } else {
-                    response.tell(speechOutput);
-                }
+              response.ask(speechOutput + "Anything else?", reprompt);
             });
         });
     };
@@ -51,16 +47,18 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
     intentHandlers.ChangeDueDateIntent = function (intent, session, response) {
         //change the due date of the baby.
         var newDueDate = intent.slots.NewDueDate.value;
-        if (!dueDateIsValid(newDueDate)) {
+        if (!newDueDate) {
             response.ask('What is the new due date for the baby?', 'Please say the due date again');
             return;
         }
         storage.loadInfo(session, function (currentPregnancy) {
+            var speechOutput = '',
+              reprompt = textHelper.nextHelp;
             currentPregnancy.data.dueDate[0] = newDueDate;
 
             speechOutput += 'The due date for your baby is set to' + newDueDate + '. ';
             currentPregnancy.save(function () {
-                response.tell(speechOutput);
+              response.ask(speechOutput + "Anything else?", reprompt);
             });
         });
     };
@@ -68,12 +66,12 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
 
     intentHandlers.GiveCountdownIntent = function (intent, session, response) {
         //tells the time left in the pregnancy and sends the result in a card.
-        storage.loadGame(session, function (currentPregnancy) {
+        storage.loadInfo(session, function (currentPregnancy) {
             var interval = intent.slots.DateFormat.value,
                 continueSession,
                 speechOutput = '',
                 cardOutput = '';
-            if (currentPregnancy.data.dueDate.length === 0) {
+            if (!currentPregnancy.data.dueDate[0]]) {
                 response.tell('You have not set your due date.');
                 return;
             }
@@ -92,12 +90,12 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
 
     intentHandlers.BabyDueDateIntent = function (intent, session, response) {
         //tells the time left in the pregnancy and sends the result in a card.
-        storage.loadGame(session, function (currentPregnancy) {
+        storage.loadInfo(session, function (currentPregnancy) {
             var continueSession,
                 speechOutput = '',
                 cardOutput = '';
-            if (currentPregnancy.data.dueDate.length === 0) {
-                response.tell('You have not set your due date.');
+            if (!currentPregnancy.data.dueDate[0]]) {
+                response.ask('You have not set your due date. When is the baby due?', 'When is the baby due?');
                 return;
             }
             var currentDueDate = currentPregnancy.data.dueDate[0];
@@ -111,13 +109,13 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
 
     intentHandlers.SizeOfBabyIntent = function (intent, session, response) {
         //tells the size of the baby and sends the result in a card.
-        storage.loadGame(session, function (currentPregnancy) {
+        storage.loadInfo(session, function (currentPregnancy) {
             var continueSession,
                 ans,
                 speechOutput = '',
                 cardOutput = '';
-            if (currentPregnancy.data.dueDate.length === 0) {
-                response.tell('You have not set your due date.');
+            if (!currentPregnancy.data.dueDate[0]) {
+                response.ask('You have not set your due date. When is the baby due?', 'When is the baby due?');
                 return;
             }
             var currentDueDate = currentPregnancy.data.dueDate[0];

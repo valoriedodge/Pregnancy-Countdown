@@ -24,7 +24,7 @@ var storage = (function () {
             //it can be used as an indication of whether the user has already set a due date
             var pregnant = false;
             var pregnancyData = this.data;
-            if (pregnancyData.dueDate.length !== 0) {
+            if (pregnancyData.dueDate[0]) {
               pregnant = true;
             }
             return pregnant;
