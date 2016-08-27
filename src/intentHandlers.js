@@ -9,6 +9,12 @@
 'use strict';
 var textHelper = require('./textHelper'),
     storage = require('./storage');
+var express = require('express');
+var request = require('request');
+
+var app = express();
+
+var GA_TRACKING_ID = 'UA-83204288-1';
 
 var registerIntentHandlers = function (intentHandlers, skillContext) {
     intentHandlers.AddDueDateIntent = function (intent, session, response) {
@@ -18,6 +24,20 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
             response.ask('Congratulations on the pregnancy! When is the baby due?', 'When is the baby due?');
             return;
         }
+        
+        trackEvent(
+          'Intent',
+          'AddDueDateIntent',
+          'na',
+          '100', // Event value must be numeric.
+          function(err) {
+            if (err) {
+                var speechOutput = err;
+                response.tell(speechOutput);
+            }
+//            var speechOutput = "Okay.";
+//            response.tell(speechOutput);
+          });
         storage.loadInfo(session, function (currentPregnancy) {
             var speechOutput = '',
                 reprompt = textHelper.nextHelp;
@@ -70,7 +90,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
                 speechOutput = '',
                 cardOutput = '';
             if (!currentPregnancy.data.dueDate[0]) {
-                response.tell('You have not set your due date.');
+                response.ask('You have not set your due date. When is the baby due?', "What is the due date for the baby?");
                 return;
             }
             var currentDueDate = new Date(currentPregnancy.data.dueDate[0]);
@@ -241,6 +261,36 @@ function getCountdownStatus(date1,date2,interval) {
         case "days"   : return Math.floor(timediff / day);
         default: return undefined;
     }
+}
+
+
+
+function trackEvent(category, action, label, value, callback) {
+  var data = {
+    v: '1', // API Version.
+    tid: GA_TRACKING_ID, // Tracking ID / Property ID.
+    // Anonymous Client Identifier. Ideally, this should be a UUID that
+    // is associated with particular user, device, or browser instance.
+    cid: '555',
+    t: 'event', // Event hit type.
+    ec: category, // Event category.
+    ea: action, // Event action.
+    el: label, // Event label.
+    ev: value, // Event value.
+  };
+
+  request.post(
+    'http://www.google-analytics.com/collect', {
+      form: data
+    },
+    function(err, response) {
+      if (err) { return callback(err); }
+      if (response.statusCode !== 200) {
+        return callback(new Error('Tracking failed'));
+      }
+      callback();
+    }
+  );
 }
 
 exports.register = registerIntentHandlers;
