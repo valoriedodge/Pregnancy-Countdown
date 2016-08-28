@@ -37,7 +37,13 @@
       "intent": "BabyDueDateIntent"
     },
     {
+      "intent": "HowFarIntent"
+    },
+    {
       "intent": "SizeOfBabyIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"

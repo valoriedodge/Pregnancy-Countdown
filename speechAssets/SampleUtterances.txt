@@ -1,4 +1,4 @@
-
+AddDueDateIntent {DueDate}
 AddDueDateIntent add my due date
 AddDueDateIntent we're having a baby
 AddDueDateIntent I'm having a baby
@@ -59,6 +59,18 @@ BabyDueDateIntent what is my baby's due date
 BabyDueDateIntent what is the baby's due date
 BabyDueDateIntent what is my partner's due date
 BabyDueDateIntent what is my girlfriend's due date
+BabyDueDateIntent when is my due date
+BabyDueDateIntent when is my wife's due date
+BabyDueDateIntent when is my baby's due date
+BabyDueDateIntent when is the baby's due date
+BabyDueDateIntent when is my partner's due date
+BabyDueDateIntent when is my girlfriend's due date
+
+HowFarIntent how far along
+HowFarIntent how far along am I
+HowFarIntent how far along is my girlfriend
+HowFarIntent how far along is my wife
+HowFarIntent how far along is my partner
 
 ChangeDueDateIntent change my due date
 ChangeDueDateIntent my due date changed
@@ -88,6 +100,7 @@ ChangeDueDateIntent my girlfriend's new due date is {NewDueDate}
 ChangeDueDateIntent {NewDueDate} is my girlfriend's new due date
 ChangeDueDateIntent change my girlfriend's due date to {NewDueDate}
 
+GiveCountdownIntent how much more
 GiveCountdownIntent how many {DateFormat} I have left
 GiveCountdownIntent how many {DateFormat} my wife has left
 GiveCountdownIntent how many {DateFormat} my partner has left
@@ -286,6 +299,27 @@ GiveCountdownIntent give me how much left until the baby is born
 GiveCountdownIntent give me how much longer until the baby is born
 GiveCountdownIntent give me how much left until my baby is born
 GiveCountdownIntent give me how much longer until my baby is born
+GiveCountdownIntent how much more
+GiveCountdownIntent how much more until the baby is here
+GiveCountdownIntent how much more until my baby is here
+GiveCountdownIntent how much more until the baby comes
+GiveCountdownIntent how much more until my baby comes
+GiveCountdownIntent how much more until the baby is born
+GiveCountdownIntent how much more until my baby is born
+GiveCountdownIntent tell me how much more
+GiveCountdownIntent tell me how much more until the baby is here
+GiveCountdownIntent tell me how much more until my baby is here
+GiveCountdownIntent tell me how much more until the baby comes
+GiveCountdownIntent tell me how much more until my baby comes
+GiveCountdownIntent tell me how much more until the baby is born
+GiveCountdownIntent tell me how much more until my baby is born
+GiveCountdownIntent give me how much more
+GiveCountdownIntent give me how much more until the baby is here
+GiveCountdownIntent give me how much more until my baby is here
+GiveCountdownIntent give me how much more until the baby comes
+GiveCountdownIntent give me how much more until my baby comes
+GiveCountdownIntent give me how much more until the baby is born
+GiveCountdownIntent give me how much more until my baby is born
 GiveCountdownIntent when am I having my baby
 GiveCountdownIntent when am I going to have my baby
 GiveCountdownIntent when am I having the baby
@@ -380,6 +414,12 @@ SizeOfBabyIntent how large is the fetus
 SizeOfBabyIntent how big is my baby
 SizeOfBabyIntent how big is the baby
 SizeOfBabyIntent how big is the fetus
+SizeOfBabyIntent how long is my baby
+SizeOfBabyIntent how long is the baby
+SizeOfBabyIntent how long is the fetus
 SizeOfBabyIntent what size is my baby
 SizeOfBabyIntent what size is the baby
 SizeOfBabyIntent what size is the fetus
+SizeOfBabyIntent how much does the baby weigh
+SizeOfBabyIntent how much does my baby weigh
+SizeOfBabyIntent how much does the fetus weigh
