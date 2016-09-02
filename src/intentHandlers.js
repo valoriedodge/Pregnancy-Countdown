@@ -37,11 +37,11 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
             var speechOutput = '',
                 reprompt = textHelper.nextHelp;
             if (currentPregnancy.data.dueDate[0]) {
-                speechOutput += 'The due date was already set to ' + currentPregnancy.data.dueDate[0] + '.';
+                speechOutput += 'I have the due date set as ' + currentPregnancy.data.dueDate[0] + '.';
                 if (skillContext.needMoreHelp) {
                     response.ask(speechOutput + ' What would you like to do?', 'What would you like to do?');
                 }
-                response.ask(speechOutput + 'Do you want to change the due date?', 'When is the baby due?');
+                response.ask(speechOutput + ' What woud you like to do?', 'What would you like to do?');
                 return;
             }
             if (!dueDate) {
@@ -66,7 +66,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
         //change the due date of the baby.
         var newDueDate = intent.slots.NewDueDate.value;
         if (!newDueDate || !dueDateIsValid(newDueDate)) {
-            response.ask('What is the new due date for the baby?', 'Please say the due date again');
+            response.ask('If you would like to change the due date, please say: change due date to: followed by new due date. ', 'Please say the due date again');
             return;
         }
         trackEvent(
@@ -121,9 +121,42 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
               interval = "days";
             }
             var ans = getCountdownStatus(todayDate, currentDueDate, interval);
-            if (ans > 0){
+            if (interval === "days") {
+              ans += 1;
+            }
+            if (ans > 1){
               speechOutput += ans + ' ' + interval + ' until the baby arrives!';
               cardOutput += ans + ' ' + interval + ' until the baby arrives!';
+            } else if (ans === 1) {
+              if (interval == "months") {
+                speechOutput += 'Only one month until the baby arrives!';
+                cardOutput += 'Only one month until the baby arrives!';
+              } else if (interval == "weeks") {
+                speechOutput += 'Only one week until the baby should arrive!';
+                cardOutput += 'Only one week until the baby should arrive!';
+              } else if (interval == "days"){
+                speechOutput += 'Just one day until the baby should arrive!';
+                cardOutput += 'Just one day until the baby should arrive!';
+              }
+            } else if (ans === 0) {
+              if (interval == "months") {
+                speechOutput += 'You are due this month!';
+                cardOutput += 'You are due this month!';
+              } else if (interval == "weeks") {
+                speechOutput += 'You are due this week!';
+                cardOutput += 'You are due this week!';
+              } else if (interval == "days"){
+                speechOutput += 'You are due today!';
+                cardOutput += 'You are due today!';
+              }
+            } else if (ans === -1) {
+              if (interval == "weeks") {
+                speechOutput += 'You are one week overdue!';
+                cardOutput += 'You are one week overdue!';
+              } else if (interval == "days"){
+                speechOutput += 'You are one day overdue!';
+                cardOutput += 'You are one day overdue!';
+              }
             } else {
               ans = -ans;
               speechOutput += 'You are ' + ans + ' ' + interval + ' overdue!';
@@ -271,25 +304,25 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
     };
 
     intentHandlers['AMAZON.NoIntent'] = function (intent, session, response) {
-        var speechOutput = textHelper.completeHelp;
-        if (skillContext.needMoreHelp) {
-            response.ask(textHelper.completeHelp + ' So, how can I help?', 'How can I help?');
-        } else {
-            response.ask(textHelper.nextHelp, textHelper.completeHelp);
-        }
+      if (skillContext.needMoreHelp) {
+          response.tell('Okay.  Whenever you\'re ready, you can ask about your baby.');
+      } else {
+          response.tell('Goodbye');
+      }
     };
+
     intentHandlers['AMAZON.HelpIntent'] = function (intent, session, response) {
         var speechOutput = textHelper.completeHelp;
         if (skillContext.needMoreHelp) {
             response.ask(textHelper.completeHelp + ' So, how can I help?', 'How can I help?');
         } else {
-            response.tell(textHelper.completeHelp);
+            response.ask(textHelper.nextHelp);
         }
     };
 
     intentHandlers['AMAZON.CancelIntent'] = function (intent, session, response) {
         if (skillContext.needMoreHelp) {
-            response.ask(textHelper.completeHelp + ' So, how can I help?', 'How can I help?');
+            response.tell('Okay.  Whenever you\'re ready, you can ask about your baby.');
         } else {
             response.tell('Goodbye');
         }
@@ -297,7 +330,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
 
     intentHandlers['AMAZON.StopIntent'] = function (intent, session, response) {
         if (skillContext.needMoreHelp) {
-            response.ask(textHelper.completeHelp + ' So, how can I help?', 'How can I help?');
+            response.tell('Okay.  Whenever you\'re ready, you can ask about your baby.');
         } else {
             response.tell('Goodbye');
         }
@@ -308,8 +341,8 @@ function dueDateIsValid(date) {
     var currentDate = new Date();
     var proposedDate = new Date(date);
     var days = "days";
-    var checkDate = getCountdownStatus(currentDate, proposedDate, days);
-    if (!checkDate || isNaN(checkDate) || checkDate < 0 || checkDate > 365) {
+    var checkDate = getCountdownStatus(currentDate, proposedDate, days) + 5;
+    if (!checkDate || isNaN(checkDate) || checkDate < 0 || checkDate > 285) {
       return false;
     }  else {
       return true;

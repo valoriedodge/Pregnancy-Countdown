@@ -394,6 +394,8 @@ PregnancyTerminatedIntent my partner isn't pregnant
 PregnancyTerminatedIntent my partner is not pregnant anymore
 PregnancyTerminatedIntent my partner isn't pregnant anymore
 
+SizeOfBabyIntent the size of the baby
+SizeOfBabyIntent the size of my baby
 SizeOfBabyIntent size of the baby
 SizeOfBabyIntent size of my baby
 SizeOfBabyIntent baby size
