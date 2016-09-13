@@ -192,8 +192,9 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
             var todayDate = new Date();
 
             var ans = (40 - getCountdownStatus(todayDate, currentDueDate, "weeks"));
-            speechOutput += 'You are about ' + ans + ' weeks along!';
-            cardOutput += 'You are about ' + ans + ' weeks along!';
+            var quip = quips[ans];
+            speechOutput += 'You are about ' + ans + ' weeks along. ' + quip;
+            cardOutput += 'You are about ' + ans + ' weeks along. ' + quip;
 
             response.tellWithCard(speechOutput, "Weeks Pregnant", cardOutput);
         });
@@ -393,46 +394,46 @@ var sizes = {
 }
 
 var quips = {
-  3: "",
-  4: "",
-  5: "",
-  6: "",
-  7: "",
-  8: "",
-  9: "",
-  10: "",
-  11: "",
-  12: "",
-  13: "",
-  14: "",
-  15: "",
-  16: "",
-  17: "",
-  18: "",
-  19: "",
-  20: "Your baby is about the size of an artichoke. Weighing about 10.6 ounces, and 10.1 inches long.",
-  21: "Your baby is about the size of a banana. Weighing about 12.7 ounces, and 10.5 inches long.",
-  22: "Your baby is about the size of a small spaghetti squash. Weighing about 15.1 ounces, and 10.9 inches long.",
-  23: "Your baby is about the size of a large mango. Weighing about 1.1 pounds, and 11.4 inches long.",
-  24: "Your baby is about the size of an ear of corn. Weighing about 1.3 pounds, and 11.8 inches long.",
-  25: "Your baby is about the size of a large papaya. Weighing about 1.5 pounds, and 13.6 inches long.",
-  26: "Your baby is about the size of a zucchini. Weighing about 1.7 pounds, and 14 inches long.",
-  27: "Your baby is about the size of a head of cauliflower. Weighing about 1.9 pounds, and 14.4 inches long.",
-  28: "Your baby is about the size of a large eggplant. Weighing about 2.2 pounds, and 14.8 inches long.",
-  29: "Your baby is about the size of a butternut squash. Weighing about 2.5 pounds, and 15.2 inches long.",
-  30: "Your baby is about the size of a coconut. Weighing about 2.9 pounds, and 15.7 inches long.",
-  31: "Your baby is about the size of a large cabbage. Weighing about 3.3 pounds, and 16.2 inches long.",
-  32: "Your baby is about the size of a jicama. Weighing about 3.7 pounds, and 16.7 inches long.",
-  33: "Your baby is about the size of a pineapple. Weighing about 4.2 pounds, and 17.2 inches long.",
-  34: "Your baby is about the size of a cantaloupe. Weighing about 4.7 pounds, and 17.7 inches long.",
-  35: "Your baby is about the size of a honeydew melon. Weighing about 5.2 pounds, and 18.2 inches long.",
-  36: "Your baby is about the size of a head of romaine lettuce. Weighing about 5.8 pounds, and 18.6 inches long.",
-  37: "Your baby is about the size of a bunch of Swiss chard. Weighing about 6.3 pounds, and 19.1 inches long.",
-  38: "Your baby is about the length of a stalk of rhubarb. Weighing about 6.8 pounds, and 19.6 inches long.",
-  39: "Your baby is about the size of a mini-watermelon. Weighing about 7.2 pounds, and 20 inches long.",
-  40: "Your baby is about the size of a small pumpkin. Weighing about 7.6 pounds, and 20.1 inches long.",
-  41: "This baby is overdue!",
-  42: "It makes you wonder, why is this baby still in there?"
+  3: "You're just starting!",
+  4: "Feeling sick yet?",
+  5: "Your baby has a heartbeat!",
+  6: "Your baby is starting to have a face!",
+  7: "Any cravings yet? My mom craved cookies.",
+  8: "Time for your first prenatal appointment!",
+  9: "Your baby now has eyes!",
+  10: "How is your morning sickness?",
+  11: "Tired? Growing a baby is hard work.",
+  12: "You deserve some chocolate.",
+  13: "You made it to the second trimester!",
+  14: "Your baby has started urinating. You're probably going to start doing that more too.",
+  15: "Are you taking your prenatal vitamin?",
+  16: "With a clear view, you could tell if your baby is a boy or girl.",
+  17: "Any crazy pregnancy dreams?",
+  18: "Have you felt your baby move yet?",
+  19: "Almost half way there!",
+  20: "Are you going to find out the gender? ",
+  21: "Over halfway there!",
+  22: "Pregnancy brain is a real thing.",
+  23: "It's not you. It's the pregnancy.",
+  24: "Try to take extra care of yourself.",
+  25: "There is no shame in eating one for the baby too.",
+  26: "Don't be ashamed if you lost your keys again.",
+  27: "You deserve a foot massage",
+  28: "Finally, the third trimester!",
+  29: "Getting any sleep at night?",
+  30: "How is the name choosing coming? You could always name your baby Alexa, like me.",
+  31: "How's your back? You should consider getting a body pillow if you don't have one.",
+  32: "Maybe time to start thinking about the nursery for the baby if you haven't already.",
+  33: "How are the baby olympics in your stomach?",
+  34: "Feeling big yet?",
+  35: "Do you remember what it was like to sleep a whole night through?",
+  36: "Getting close, do you have everything ready for the hospital?",
+  37: "In a few short weeks, you will be able to tie your shoes again.",
+  38: "How's your back?",
+  39: "Almost there! And bending over will be easy again.",
+  40: "It's time to have a baby! Any contractions?",
+  41: "Why is the baby still in there?",
+  42: "I'm so sorry."
 }
 
 function getCountdownStatus(date1,date2,interval) {
